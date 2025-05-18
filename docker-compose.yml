@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   backend:
-    build: .
+    build: ashyrmalik/taskmgr-backend
     container_name: taskmanager-backend
     ports:
       - '3000:3000'
@@ -13,7 +13,7 @@ services:
     restart: always
 
   frontend:
-    build: ./client
+    build: ashyrmalik/taskmgr-frontend
     container_name: taskmanager-frontend
     ports:
       - '3001:80'
