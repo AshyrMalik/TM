@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: taskmanager-backend
+    ports:
+      - '3000:3000'
+    environment:
+      - MONGO_URI=${MONGO_URI}
+    depends_on:
+      - mongo
+    restart: always
+
+  frontend:
+    build: ./client
+    container_name: taskmanager-frontend
+    ports:
+      - '3001:80'
+    depends_on:
+      - backend
+    restart: always
+
+  mongo:
+    image: mongo:6
+    container_name: taskmanager-mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+    restart: always
+
+volumes:
+  mongo-data: 
