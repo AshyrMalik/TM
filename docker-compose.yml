@@ -2,12 +2,12 @@ version: '3.8'
 
 services:
   backend:
-    build: ashyrmalik/taskmgr-backend
+    build: .
     container_name: taskmanager-backend
     ports:
       - '3000:3000'
     environment:
-      - MONGO_URI=${MONGO_URI}
+      - MONGO_URI=${mongodb+srv://ashar:wwe@cluster0.3xere.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0}
     depends_on:
       - mongo
     restart: always
