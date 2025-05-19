@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Git Clone') {
             steps {
-                git url: 'https://github.com/AshyrMalik/Task-Management-Devops-Assignemnt.git', 
+                git url: 'https://github.com/AshyrMalik/TM.git', 
                      branch: 'main'
                 echo 'Code cloned successfully 📦'
             }
